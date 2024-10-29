@@ -24,10 +24,10 @@ function Selector({ setRegion }) {
 	return (
 		<div className="h-10 w-40 shadow bg-slate-200 rounded-md dark:bg-slate-600 dark:text-white">
 			<Listbox value={selectedPerson} onChange={setSelectedPerson}>
-				<ListboxButton className="h-full w-full flex justify-start items-center px-4 rounded-md relative">
+				<ListboxButton className="group h-full w-full flex justify-start items-center px-4 rounded-md relative">
 					{selectedPerson.continent}
 					<ChevronDownIcon
-						className="h-5 w-5 text-black absolute right-2 dark:text-white"
+						className="h-5 w-5 text-black absolute right-2 dark:text-white group-data-[open]:rotate-180 duration-300"
 						aria-hidden="true"
 					/>
 				</ListboxButton>

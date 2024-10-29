@@ -30,7 +30,6 @@ const LoaderCard = () => {
 				<div className="h-2 bg-gray-200 rounded-full dark:bg-gray-400 w-1/2"></div>
 			</div>
 
-			<span className="sr-only">Loading...</span>
 		</div>
 	);
 };

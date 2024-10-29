@@ -1,14 +1,26 @@
 import { useEffect, useState } from "react";
 import Loader from "../loader/loader";
 import CountryCard from "./countryCard";
-import { getData } from "../api";
+import axious from 'axios'
 
 const Container = ({ value, region }) => {
-	const [data, setData] = useState(null);
+
+	const [data, setData] = useState(null)
+
+const getData = async () => {
+  try {
+    const response = await axious.get('https://restcountries.com/v3.1/all')
+		console.log(response.data)
+		setData(response.data)
+    
+  } catch (error) {
+    console.log(error.message)
+  }
+}
 
 	useEffect(() => {
-		getData().then((countryData) => setData(countryData));
-	}, []);
+		getData()
+	},[])
 
 	return (
 		<div className="h-[90%] w-full overflow-hidden">
